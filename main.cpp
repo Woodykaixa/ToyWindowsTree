@@ -26,8 +26,6 @@ int wmain(int argc, wchar_t **argv) {
     std::locale::global(std::locale("zh_CN.UTF-8"));
     auto parser = new WindowsTree::ArgParser(argc, argv);
     auto config = parser->parse();
-    wprintf(fmt::format(L"FolderOnly: {}, FullPath: {}, ScanPath: {}, ScanLevel: {}\n",
-                         config.FolderOnly, config.FullPath, config.ScanPath, config.Level).c_str());
     if (config.PrintHelp) {
         help();
         return 0;
